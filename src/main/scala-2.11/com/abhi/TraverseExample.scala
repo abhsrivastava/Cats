@@ -1,10 +1,11 @@
 package com.abhi
 
-import cats.Applicative
-
 import scala.language.higherKinds
-import cats.syntax.all._
-
+import cats.Applicative
+import cats.instances.future._
+import cats.syntax.cartesian._
+import cats.syntax.applicative._
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, Future}
 /**
