@@ -11,7 +11,8 @@ import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import cats.implicits._
 
-object Ex13 extends App {
+object \
+Ex13 extends App {
    type Response[A] = EitherT[Future, String, A]
    val powerLevels = Map (
       "Bumblebee" -> 6,
