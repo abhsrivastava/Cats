@@ -12,6 +12,7 @@ import scala.concurrent.{Await, Future}
 import cats.Traverse
 import cats.instances.future._
 import cats.instances.list._
+import cats.syntax.traverse._
 
 /**
   * Created by abhsrivastava on 1/22/17.
@@ -34,6 +35,6 @@ object TraverseExample extends App {
 
    val f1 = Await.result(listTraverse(hostnames)(getUptime), Duration.Inf)
    println(f1)
-   val f2 = Await.result(Traverse[List].traverse(hostnames)(getUptime), Duration.Inf)
+   val f2 = Await.result(hostnames.traverse(getUptime), Duration.Inf)
    println(f2)
 }
